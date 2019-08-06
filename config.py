@@ -1,4 +1,4 @@
 import os
 
 
-PATH_TO_FILE = os.environ.get("PATH_TO_FILE", "/Users/ratmir/opencv/data/haarcascades/")
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))

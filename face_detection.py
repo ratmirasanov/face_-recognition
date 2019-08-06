@@ -4,8 +4,7 @@ import cv2
 import config
 
 
-# Multiple cascades: https://github.com/Itseez/opencv/tree/master/data/haarcascades
-face_cascade = cv2.CascadeClassifier(config.PATH_TO_FILE + "haarcascade_frontalface_default.xml")
+face_cascade = cv2.CascadeClassifier(config.ROOT_DIR + "/haarcascades/haarcascade_frontalface_default.xml")
 
 cap = cv2.VideoCapture(0)
 cap.set(3, 800) # Set Width.
