@@ -1,14 +1,12 @@
-import numpy as np
+import os
 import cv2
 
-import config
 
-
-face_cascade = cv2.CascadeClassifier(config.ROOT_DIR + "/haarcascades/haarcascade_frontalface_default.xml")
-
+face_cascade = cv2.CascadeClassifier(os.path.dirname(os.path.abspath(__file__)) +
+                                     "/haarcascades/haarcascade_frontalface_default.xml")
 cap = cv2.VideoCapture(0)
-cap.set(3, 800) # Set Width.
-cap.set(4, 600) # Set Height.
+cap.set(3, 800) # Set width.
+cap.set(4, 600) # Set height.
 
 while True:
 
@@ -29,7 +27,6 @@ while True:
         roi_color = img[y:y + h, x:x + w]
 
     cv2.imshow("face_detection", img)
-
     k = cv2.waitKey(30) & 0xff
 
     if k == 27: # Press "ESC" to quit.
