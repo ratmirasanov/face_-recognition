@@ -1,22 +1,25 @@
+"""Simple camera test."""
+
+
 import cv2
 
 
-cap = cv2.VideoCapture(0)
-cap.set(3, 640) # Set width.
-cap.set(4, 480) # Set height.
+CAM = cv2.VideoCapture(0)
+CAM.set(3, 640) # Set width.
+CAM.set(4, 480) # Set height.
 
 while True:
 
-    ret, camera = cap.read()
-    camera = cv2.flip(camera, -1) # Flip camera vertically.
-    gray = cv2.cvtColor(camera, cv2.COLOR_BGR2GRAY)
-    cv2.imshow("camera", camera)
-    cv2.imshow("gray", gray)
+    RET, IMG = CAM.read()
+    IMG = cv2.flip(IMG, -1) # Flip camera vertically.
+    GRAY = cv2.cvtColor(IMG, cv2.COLOR_BGR2GRAY)
+    cv2.imshow("camera", IMG)
+    cv2.imshow("gray", GRAY)
     k = cv2.waitKey(30) & 0xff
 
     if k == 27: # Press "ESC" to quit.
 
         break
 
-cap.release()
+CAM.release()
 cv2.destroyAllWindows()

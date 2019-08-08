@@ -1,3 +1,7 @@
+# Folders from projects.
+dataset/
+trainer/
+
 # IDE
 .idea
 
