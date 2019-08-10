@@ -8,8 +8,8 @@ import cv2
 FACE_CASCADE = cv2.CascadeClassifier(os.path.dirname(os.path.abspath(__file__)) +
                                      "/haarcascades/haarcascade_frontalface_default.xml")
 CAM = cv2.VideoCapture(0)
-CAM.set(3, 800) # Set width.
-CAM.set(4, 600) # Set height.
+CAM.set(3, 800)
+CAM.set(4, 600)
 
 while True:
 
@@ -32,7 +32,7 @@ while True:
     cv2.imshow("face_detection", IMG)
     k = cv2.waitKey(30) & 0xff
 
-    if k == 27: # Press "ESC" to quit.
+    if k == 27:
 
         break
 

@@ -8,12 +8,10 @@ import cv2
 FACE_CASCADE = cv2.CascadeClassifier(os.path.dirname(os.path.abspath(__file__)) +
                                      "/haarcascades/haarcascade_frontalface_default.xml")
 CAM = cv2.VideoCapture(0)
-CAM.set(3, 800) # Set width.
-CAM.set(4, 600) # Set height
-# For each person, enter one numeric face ID.
+CAM.set(3, 800)
+CAM.set(4, 600)
 FACE_ID = input("\n Enter user ID end press 'ENTER': ")
 print("\n [INFO] Initializing face capture. Look the camera and wait...")
-# Initialize individual sampling face count.
 COUNT = 0
 
 while True:
@@ -27,21 +25,19 @@ while True:
 
         cv2.rectangle(IMG, (x, y), (x + w, y + h), (255, 0, 0), 2)
         COUNT += 1
-        # Save the captured image into the "dataset" folder.
         cv2.imwrite("dataset/user_" + str(FACE_ID) + "_" + str(COUNT) + ".jpg", GRAY[y:y+h, x:x+w])
         cv2.imshow("face_dataset", IMG)
 
     k = cv2.waitKey(100) & 0xff
 
-    if k == 27: # Press "ESC" to quit.
+    if k == 27:
 
         break
 
-    elif COUNT >= 15: # Take 15 face sample and stop video.
+    elif COUNT >= 15:
 
         break
 
-# Do a bit of cleanup.
 print("\n [INFO] Exiting program and cleanup stuff...")
 CAM.release()
 cv2.destroyAllWindows()

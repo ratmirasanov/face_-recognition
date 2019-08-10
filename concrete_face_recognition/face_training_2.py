@@ -16,7 +16,7 @@ def get_images_and_labels(path, detector):
 
     for image_path in image_paths:
 
-        pil_img = Image.open(image_path).convert("L") # Convert it to grayscale.
+        pil_img = Image.open(image_path).convert("L")
         img_numpy = np.array(pil_img, "uint8")
         id_ = int(os.path.split(image_path)[-1].split("_")[1])
         faces = detector.detectMultiScale(img_numpy)
@@ -35,7 +35,5 @@ FACE_CASCADE = cv2.CascadeClassifier(os.path.dirname(os.path.abspath(__file__)) 
 print("\n [INFO] Training faces. It will take a few seconds. Wait...")
 FACES, IDS = get_images_and_labels("dataset", FACE_CASCADE)
 RECOGNIZER.train(FACES, np.array(IDS))
-# Save the model into "trainer/trainer.yml".
 RECOGNIZER.save("trainer/trainer.yml")
-# Print the number of faces trained and end program.
 print("\n [INFO] {0} faces trained. Exiting program...".format(len(np.unique(IDS))))
