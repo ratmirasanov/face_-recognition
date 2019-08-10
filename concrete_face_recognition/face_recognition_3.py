@@ -11,7 +11,7 @@ FACE_CASCADE = cv2.CascadeClassifier(os.path.dirname(os.path.abspath(__file__)) 
                                      "/haarcascades/haarcascade_frontalface_default.xml")
 FONT = cv2.FONT_HERSHEY_SIMPLEX
 ID_ = 0
-NAMES = ["None", "Ratmir", "Melek"]
+NAMES = ["None", "Ratmir"]
 CAM = cv2.VideoCapture(0)
 CAM.set(3, 800)
 CAM.set(4, 600)
