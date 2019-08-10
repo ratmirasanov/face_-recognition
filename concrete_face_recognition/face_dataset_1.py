@@ -34,7 +34,7 @@ while True:
 
         break
 
-    elif COUNT >= 15:
+    elif COUNT >= 40:
 
         break
 

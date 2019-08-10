@@ -35,7 +35,7 @@ while True:
         cv2.rectangle(IMG, (x, y), (x + w, y + h), (0, 255, 0), 2)
         id_, confidence = RECOGNIZER.predict(GRAY[y : y + h, x : x + w])
 
-        if confidence < 100:
+        if confidence < 30:
 
             id_ = NAMES[id_]
             confidence = "  {0}%".format(round(100 - confidence))
