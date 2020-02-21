@@ -25,7 +25,10 @@ while True:
 
         cv2.rectangle(IMG, (x, y), (x + w, y + h), (255, 0, 0), 2)
         COUNT += 1
-        cv2.imwrite("dataset/user_" + str(FACE_ID) + "_" + str(COUNT) + ".jpg", GRAY[y:y+h, x:x+w])
+        cv2.imwrite(os.path.dirname(os.path.abspath(__file__)) +
+                    "/dataset/user_" + str(FACE_ID) + "_" + str(COUNT) + ".jpg", GRAY[y:y+h, x:x+w])
+        cv2.namedWindow("face_dataset", cv2.WND_PROP_FULLSCREEN)
+        cv2.setWindowProperty("face_dataset", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
         cv2.imshow("face_dataset", IMG)
 
     k = cv2.waitKey(100) & 0xff

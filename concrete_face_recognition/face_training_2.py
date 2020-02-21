@@ -33,7 +33,8 @@ RECOGNIZER = cv2.face.LBPHFaceRecognizer_create()
 FACE_CASCADE = cv2.CascadeClassifier(os.path.dirname(os.path.abspath(__file__)) +
                                      "/haarcascades/haarcascade_frontalface_default.xml")
 print("\n [INFO] Training faces. It will take a few seconds. Wait...")
-FACES, IDS = get_images_and_labels("dataset", FACE_CASCADE)
+FACES, IDS = get_images_and_labels(os.path.dirname(os.path.abspath(__file__)) +
+                                   "/dataset", FACE_CASCADE)
 RECOGNIZER.train(FACES, np.array(IDS))
-RECOGNIZER.save("trainer/trainer.yml")
+RECOGNIZER.save(os.path.dirname(os.path.abspath(__file__)) + "/trainer/trainer.yml")
 print("\n [INFO] {0} faces trained. Exiting program...".format(len(np.unique(IDS))))

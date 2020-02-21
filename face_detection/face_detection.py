@@ -11,6 +11,7 @@ CAM = cv2.VideoCapture(0)
 CAM.set(3, 800)
 CAM.set(4, 600)
 
+
 while True:
 
     RET, IMG = CAM.read()
@@ -26,9 +27,11 @@ while True:
     for (x, y, w, h) in FACES:
 
         cv2.rectangle(IMG, (x, y), (x + w, y + h), (255, 0, 0), 2)
-        roi_gray = GRAY[y : y + h, x : x + w]
-        roi_color = IMG[y : y + h, x : x + w]
+        roi_gray = GRAY[y: y + h, x: x + w]
+        roi_color = IMG[y: y + h, x: x + w]
 
+    cv2.namedWindow("face_detection", cv2.WND_PROP_FULLSCREEN)
+    cv2.setWindowProperty("face_detection", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
     cv2.imshow("face_detection", IMG)
     k = cv2.waitKey(30) & 0xff
 

@@ -5,8 +5,8 @@ import cv2
 
 
 CAM = cv2.VideoCapture(0)
-CAM.set(3, 640)
-CAM.set(4, 480)
+CAM.set(3, 800)
+CAM.set(4, 600)
 
 while True:
 
