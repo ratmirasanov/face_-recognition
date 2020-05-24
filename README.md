@@ -1,12 +1,12 @@
-## Working with face recognition with using OpenCV
+# Working with face recognition with using OpenCV
 
-# Testing the camera
+## Testing the camera
 python simple_cam_test.py.
 
-# Face detection from camera
+## Face detection from camera
 python face_detection/face_detection.py.
 
-# Face recognition of a concrete person
+## Face recognition of a concrete person
 1. Create a dataset of faces of concrete persons: python concrete_face_recognition/face_dataset_1.py.
 2. Process of training: python concrete_face_recognition/face_training_2.py.
 3. Face recognition of a concrete person from the camera: python concrete_face_recognition/face_recognition_3.py.
